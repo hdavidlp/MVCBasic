@@ -1,0 +1,51 @@
+﻿
+@model  List<EjemploMVC.Models.viewPhones.listPhones>
+    
+
+@{
+    ViewBag.Title = "Phone List";
+}
+
+<h2>@ViewBag.title</h2>
+
+<div class="row" style="text-align:right; padding:5px">
+    <a href="~/phones/newPhone/" class="btn btn-primary">New</a>
+</div>
+ 
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>Phone</th>
+                <th>Company</th>
+                <th>Creation Date</th>
+                <th>Assign</th>
+            </tr>
+            @foreach (var oPhone in Model)
+            {
+                <tr>
+                    <th>@oPhone.idPhone</th>
+                    <th>@oPhone.phone_Number</th>
+                    <th>@oPhone.company</th>
+                    <th>@Convert.ToDateTime(oPhone.creationDate).ToShortDateString()</th>
+                    <th>
+                        @if (oPhone.assign)
+                        {
+                            string message = "currently assigned";
+                            <p>@message</p>
+                        }
+                        else
+                        {
+                            <a href="~/phones/assignRequest/@oPhone.idPhone" class="btn btn-warning">Assign to ... </a>
+                            
+                        }
+
+
+                    </th>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

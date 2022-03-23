@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbPruebaModelStoreContainer" CdmEntityContainer="dbPruebaEntities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="dbPruebaModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phones">
+      <EntityTypeMapping TypeName="dbPruebaModel.phones">
+        <MappingFragment StoreEntitySet="phones">
+          <ScalarProperty Name="assign" ColumnName="assign" />
+          <ScalarProperty Name="creationDate" ColumnName="creationDate" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="phone_Number" ColumnName="phone_Number" />
+          <ScalarProperty Name="idPhone" ColumnName="idPhone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

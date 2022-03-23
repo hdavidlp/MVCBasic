@@ -1,0 +1,2 @@
+C:\Users\Hector Lopez P\source\repos\EjemploMVC\EjemploMVC\obj\Release\EjemploMVC.csproj.AssemblyReference.cache
+C:\Users\Hector Lopez P\source\repos\EjemploMVC\EjemploMVC\obj\Release\EjemploMVC.csproj.CoreCompileInputs.cache

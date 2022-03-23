@@ -1,0 +1,44 @@
+﻿@model EjemploMVC.Models.viewPhones.phone
+
+
+@{
+    ViewBag.Title = "Adding new Phone";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm("newPhone", "Phones", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @*<div>
+                @Html.LabelFor(p => p.idPhone)
+                @Html.TextBoxFor(p => p.idPhone, "", new { @class = "form-control" })
+            </div>*@
+            <div>
+                @Html.LabelFor(p => p.phone_Numer)
+                @Html.TextBoxFor(p => p.phone_Numer, "", new { @class = "form-control"} )
+            </div>
+            <div>
+                @Html.LabelFor(p => p.company)
+                @Html.TextBoxFor(p => p.company, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @*To show DatetimePicker using helpers, you need to define [DataType (DataType.Date)]
+                 when you create a model*@
+
+                @Html.LabelFor(p => p.creation_Date)
+                @Html.EditorFor(p => p.creation_Date, "", new { @class = "form-control"})
+
+            </div>
+            @*<div>
+                @Html.LabelFor(p => p.assign)
+                @Html.CheckBoxFor(p=>p.assign)
+            </div>*@
+            <div style="text-align: right; padding: 5px">
+                <input value="Add new Phone" class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+    </div>
+
+}
+

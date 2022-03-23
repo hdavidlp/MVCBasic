@@ -1,0 +1,50 @@
+﻿@model EjemploMVC.Models.viewPhones.phoneAssign
+
+@{
+    ViewBag.Title = "assignRequest";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("assignRequest", "phones", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(m => m.selectedPhone.idPhone)
+            <div>
+                @Html.LabelFor(m => m.selectedPhone.idPhone)
+                @Html.TextBoxFor(m => m.selectedPhone.idPhone, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(m => m.selectedPhone.phone_Numer)
+                @Html.TextBoxFor(m => m.selectedPhone.phone_Numer, "", new { @class = "form-control" })
+
+            </div>
+
+            <div>
+                @Html.LabelFor(m => m.selectedPhone.company)
+                @Html.TextBoxFor(m => m.selectedPhone.company, "", new { @class = "form-control"  })
+            </div>
+
+            <div>
+                <p>Assign to:</p>
+                <select name="idSelectedClient">
+                    @foreach (var posibleClient in Model.clients)
+                    {
+                        <option value="@posibleClient.idCliente">@posibleClient.nombre @posibleClient.apellidos</option>
+                    }
+                </select>
+            </div>
+
+            <br />
+            <div style="text-align:right;">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+
+        </div>
+
+    </div>
+}
+
+

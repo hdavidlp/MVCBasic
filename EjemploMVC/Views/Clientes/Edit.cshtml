@@ -1,0 +1,48 @@
+﻿@model EjemploMVC.Models.ViewModels.TablaClientes
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@*Es como si se creara formulari ocon HTML, parametros: Metodo, Controlador, Metodo*@
+
+@*Html.BeginForm (acction, controler, method)   // Helpers *@
+@using (Html.BeginForm("Edit", "Clientes", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(d =>d.idCliente)
+            <div>
+                @Html.LabelFor(d => d.idCliente)
+                @Html.TextBoxFor(d => d.idCliente, "", new { @class = "form-control" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.nombre)
+                @Html.TextBoxFor(d => d.nombre, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.nombre, null, new { @class = "red" })
+            </div>
+
+            <div>
+                @Html.LabelFor(d => d.apellidos)
+                @Html.TextBoxFor(d => d.apellidos, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.apellidos, null, new { @class = "red" })
+            </div>
+
+            <div>
+                @Html.LabelFor(d => d.correo)
+                @Html.TextBoxFor(d => d.correo, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.correo, null, new { @class = "red" })
+            </div>
+
+            <br />
+            <div style="text-align:right;">
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+
+        </div>
+
+    </div>
+}
+
